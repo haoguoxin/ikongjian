@@ -1,0 +1,164 @@
+{template "content","header"}
+  <div class="clear"></div>
+  <div class="bkc">
+    <div class="weizhi">
+      <h3><span>当前位置 :</span><a href='/'>爱空间</a> > {catpos($catid)} </h3>
+    </div>
+    <div class="content">
+      <div class="cleft fl">
+        <div class="ck3">
+          <div class="ck3_2"></div>
+          <div class="ck3_3">
+            <div class="ck3_3_list">
+              {pc:content action="lists" catid="$catid" num="8" order="id DESC" page="$page"}
+              {loop $data $r}
+              {php $db = pc_base::load_model('hits_model'); $_r = $db->get_one(array('hitsid'=>'c-'.$modelid.'-'.$r[id])); $views = $_r[views]; }
+              <div class="ck3_3_li">
+                <div class="ck3_3_1"><a href="{$r['url']}"><img src="{$r['thumb']}" width="220px" height="133px" /></a></div>
+                <div class="ck3_3_2">
+                  <div class="ck3_3_2_1"><a href="{$r['url']}">{$r['title']}</a></div>
+                  <div class="ck3_3_2_2">{str_cut($r['description'],'198','...')}<a href="{$r['url']}">详情</a></div>
+                  <div class="ck3_3_2_3"><span class="date3">{date("Y-m-d H:i:s",$r['inputtime'])}</span><span class="titleck4 fr"><img src="{IMG_PATH}ikongjian/images/icon1.png" /> 阅读 <font>{$views}</font></span></div>
+                </div>
+                <div class="clear"></div>
+              </div>
+              {/loop}
+              {/pc}
+
+            </div>
+            <div class="pages">
+              <ul>
+                {$pages}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cright fr">
+        <div class="rk1">
+          <div class="rk1_1"><a href=""><img src="{IMG_PATH}ikongjian/images/rk1_1.jpg" width="355" height="155" /></a></div>
+          <div class="rk1_2"><a href=""><img src="{IMG_PATH}ikongjian/images/rk1_2.jpg" width="355" height="155" /></a></div>
+          <div class="rk1_3"><a href=""><img src="{IMG_PATH}ikongjian/images/rk1_3.jpg" width="355" height="210" /></a></div>
+        </div>
+        <div class="rk2">
+          <div class="rk2_1">装修热词</div>
+          <div class="clear"></div>
+          <div class="rk2_3">
+            <ul>
+              <li><a href="">交房时间</a></li>
+              <li><a href="">交房标准</a></li>
+              <li><a href="">交房验房</a></li>
+              <li><a href="">注意事项</a></li>
+              <li><a href="">交房时间</a></li>
+              <li><a href="">交房标准</a></li>
+              <li><a href="">交房验房</a></li>
+              <li><a href="">注意事项</a></li>
+              <li><a href="">交房时间</a></li>
+              <li><a href="">交房标准</a></li>
+              <li><a href="">交房验房</a></li>
+              <li><a href="">注意事项</a></li>
+              <li><a href="">交房时间</a></li>
+              <li><a href="">交房标准</a></li>
+              <li><a href="">交房验房</a></li>
+              <li><a href="">注意事项</a></li>
+              <li><a href="">交房验房</a></li>
+              <li><a href="">注意事项</a></li>
+            </ul>
+            <div class="clear"></div>
+          </div>
+        </div>
+        <div class="rk2">
+          <div class="rk2_1">最新装修专题</div>
+          <div class="clear"></div>
+          <div class="rk2_3">
+            <ul>
+              <li><a href="">交房时间</a></li>
+              <li><a href="">交房标准</a></li>
+              <li><a href="">交房验房</a></li>
+              <li><a href="">注意事项</a></li>
+              <li><a href="">交房时间</a></li>
+              <li><a href="">交房标准</a></li>
+              <li><a href="">交房验房</a></li>
+              <li><a href="">注意事项</a></li>
+              <li><a href="">交房时间</a></li>
+              <li><a href="">交房标准</a></li>
+              <li><a href="">交房验房</a></li>
+              <li><a href="">注意事项</a></li>
+              <li><a href="">交房时间</a></li>
+              <li><a href="">交房标准</a></li>
+              <li><a href="">交房验房</a></li>
+              <li><a href="">注意事项</a></li>
+              <li><a href="">交房验房</a></li>
+              <li><a href="">注意事项</a></li>
+            </ul>
+            <div class="clear"></div>
+          </div>
+        </div>
+        <div class="rk2">
+          <div class="rk2_1">最新装修攻略<span class="fr"><a href="">more</a></span></div>
+          <div class="clear"></div>
+          <div class="rk2_2">
+            <ul>
+              <li><a href="">• 超棒家居收纳小技巧 善用你的地盘吧~</a></li>
+              <li><a href="">• 家居diy：万圣节之夜鬼马狂欢 你家敢这样装饰吗？</a></li>
+              <li><a href="">• 什么都不懂也敢自己装修 靠的就是这些绝招了！ </a></li>
+              <li><a href="">• 超棒家居收纳小技巧 善用你的地盘吧~</a></li>
+              <li><a href="">• 家居diy：万圣节之夜鬼马狂欢 你家敢这样装饰吗？</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="rk2">
+          <div class="rk2_1">最新装修资讯<span class="fr"><a href="">more</a></span></div>
+          <div class="clear"></div>
+          <div class="rk2_2">
+            <ul>
+              <li><a href="">• 超棒家居收纳小技巧 善用你的地盘吧~</a></li>
+              <li><a href="">• 家居diy：万圣节之夜鬼马狂欢 你家敢这样装饰吗？</a></li>
+              <li><a href="">• 什么都不懂也敢自己装修 靠的就是这些绝招了！ </a></li>
+              <li><a href="">• 超棒家居收纳小技巧 善用你的地盘吧~</a></li>
+              <li><a href="">• 家居diy：万圣节之夜鬼马狂欢 你家敢这样装饰吗？</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="rk2">
+          <div class="rk2_1">大家都在问<span class="fr"><a href="">more</a></span></div>
+          <div class="clear"></div>
+          <div class="rk2_2">
+            <ul>
+              <li><a href="">• 超棒家居收纳小技巧 善用你的地盘吧~</a></li>
+              <li><a href="">• 家居diy：万圣节之夜鬼马狂欢 你家敢这样装饰吗？</a></li>
+              <li><a href="">• 什么都不懂也敢自己装修 靠的就是这些绝招了！ </a></li>
+              <li><a href="">• 超棒家居收纳小技巧 善用你的地盘吧~</a></li>
+              <li><a href="">• 家居diy：万圣节之夜鬼马狂欢 你家敢这样装饰吗？</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <div class="clear"></div>
+  <div class="bk8">
+    <div class="bk8_c">
+      <div class="bk8menu">
+        <ul>
+          <li><a>最新推荐</a></li>
+          <div class="clear"></div>
+        </ul>
+      </div>
+      <div class="bk8mm">
+        <div class="bk8m">
+          <ul>
+            <li class="mln"><a href="">交房验房1</a></li>
+            <li><a href="">交房验房</a></li>
+            <li><a href="">交房验房</a></li>
+            <li><a href="">交房验房</a></li>
+            <div class="clear"></div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+{template "content","footer"}
